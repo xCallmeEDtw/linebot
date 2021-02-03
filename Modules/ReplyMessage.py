@@ -25,7 +25,7 @@ def ReplyText(replyToken,text):
     ]
     ReplyMessage(replyToken,messages)
     return 0
-def Sticker(replyToken,st_id):
+def ReplySticker(replyToken,st_id):
     messages = [
         {
             "type":"sticker",

@@ -1,9 +1,10 @@
 from flask import Flask,request
 from Modules.ReplyMessage import ReplyText
+from Modules.ReplyMessage import ReplySticker
 app = Flask(__name__)
 #HTTP請求方式
 @app.route('/', methods=['GET', 'POST'])
-
+# {'type': 'message', 'replyToken': '401f1beb096e4bd094fca05f1162e588', 'source': {'userId': 'Udde25b6bc63d084bbbf55c53ff0826d4', 'type': 'user'}, 'timestamp': 1612339264295, 'mode': 'active', 'message': {'type': 'sticker', 'id': '13493434162018', 'stickerId': '140', 'packageId': '2', 'stickerResourceType': 'STATIC', 'keywords': ['chase', 'play', 'skip', 'enjoy', 'Happy']}}
 def index():
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
@@ -16,6 +17,8 @@ def index():
 		# if message.
 		if text == 'ssd':
 			ReplyText(replyToken,"go buy ssd la!")
+			ReplySticker(replyToken,'140')
+
 
 		return 'SUCCEED'
 	elif request.method == 'GET':
