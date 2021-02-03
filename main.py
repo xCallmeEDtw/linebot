@@ -17,7 +17,7 @@ def index():
 		# if message.
 		if text == 'ssd':
 			ReplyText(replyToken,"go buy ssd la!")
-			ReplySticker(replyToken,'52002740','11537')
+			ReplySticker(replyToken,'1','1')
 
 
 		return 'SUCCEED'
