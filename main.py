@@ -8,11 +8,11 @@ def index():
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
 		print(message)
-		return 'buy ssd la'
+		return 0
 	elif request.method == 'GET':
-		return 'buy ssd b***ch'
+		return 0
 	else:
-		return 'tell u to buy ssd'
+		return 0
 if __name__ == '__main__':
     app.run(host='127.0.0.1',port=5000,debug=True, use_reloader=False)
 
