@@ -25,11 +25,13 @@ def ReplyText(replyToken,text):
     ]
     ReplyMessage(replyToken,messages)
     return 0
-def ReplySticker(replyToken,st_id):
+def ReplySticker(replyToken,st_id,pk_id):
     messages = [
         {
             "type":"sticker",
-            "id": st_id
+            "packageId": pk_id,
+            "stickerId": st_id
+            
         }
     ]
     ReplyMessage(replyToken,messages)
