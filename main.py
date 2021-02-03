@@ -1,13 +1,23 @@
 from flask import Flask,request
-
+from Modules import ReplyMessage
 app = Flask(__name__)
-
 #HTTP請求方式
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
 		print(message)
+		replyToken = message.get('replyToken')
+
+		messages = [
+		    {
+		        "type":"text",
+		        "text":"Hello, world1"
+		    }
+		]
+
+		ReplyMessage(replyToken,messages)
+
 		return 0
 	elif request.method == 'GET':
 		return 0
