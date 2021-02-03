@@ -1,5 +1,5 @@
 from flask import Flask,request
-from Modules import ReplyMessage
+from Modules.ReplyMessage import ReplyMessage
 app = Flask(__name__)
 #HTTP請求方式
 @app.route('/', methods=['GET', 'POST'])
