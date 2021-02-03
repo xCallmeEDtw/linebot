@@ -1,5 +1,5 @@
 from flask import Flask,request
-# from Modules.ReplyMessage import ReplyText
+from Modules.ReplyMessage import ReplyText
 from Modules.ReplyMessage import ReplySticker
 app = Flask(__name__)
 #HTTP請求方式
