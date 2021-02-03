@@ -25,13 +25,13 @@ def index():
 # {'type': 'message', 'replyToken': '4128834b76bc44159cbc7da6c3b6e36a', 'source': {'userId': 'Udde25b6bc63d084bbbf55c53ff0826d4', 'type': 'user'}, 'timestamp': 1612336487515, 'mode': 'active', 'message': {'type': 'text', 'id': '13493228092527', 'text': '有'}}
 		# if message.
 		if text == 'ssd':
-			messages = [
-			    {
-			        "type":"text",
-			        "text": "go buy ssd la!"
-			    }
-			]
-			ReplyMessage(replyToken,messages)
+			# messages = [
+			#     {
+			#         "type":"text",
+			#         "text": 
+			#     }
+			# ]
+			ReplyMessage(replyToken,"go buy ssd la!")
 
 
 		return 'SUCCEED'

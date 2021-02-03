@@ -1,8 +1,14 @@
 import requests
 import json
 
-def ReplyMessage(replyToken,messages):
+def ReplyMessage(replyToken,text):
     #請使用自己的token
+    messages = [
+        {
+            "type":"text",
+            "text": text
+        }
+    ]
     accessToken = 'LTaTHoeYkfTYpyCtqRwQX2wlaQniteHxFQsrK6tRIGhtn+SLOA9Wef6oDEGtlBIrxFbQPNI3aNfdHLSgGELZRl2iCIwE1zYB2i0QA6K2CxoutgsNsHZr097uFTAfIA1Bdv/Dg83ud3qUpDa92w6FCQdB04t89/1O/w1cDnyilFU='
     
     headers ={
