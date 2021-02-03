@@ -21,11 +21,11 @@ def index():
 			ReplyMessage(replyToken,messages)
 
 
-		return 'SUCCEED'
+		return 'go buy ssd la'
 	elif request.method == 'GET':
-		return 'SUCCEED'
+		return 'go buy ssd la'
 	else:
-		return 'SUCCEED'
+		return 'go buy ssd la'
 if __name__ == '__main__':
     app.run(host='127.0.0.1',port=5000,debug=True, use_reloader=False)
 
