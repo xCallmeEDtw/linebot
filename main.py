@@ -13,13 +13,12 @@ def index():
 		replyToken = message.get('replyToken')
 		text = message.get('message').get('text')
 		print(text)
-# {'type': 'message', 'replyToken': '4128834b76bc44159cbc7da6c3b6e36a', 'source': {'userId': 'Udde25b6bc63d084bbbf55c53ff0826d4', 'type': 'user'}, 'timestamp': 1612336487515, 'mode': 'active', 'message': {'type': 'text', 'id': '13493228092527', 'text': '有'}}
-		# if message.
-		#MessageAdd(m_add,m_type,messages):
+		
 		if text == 'ssd':
 			messages = []
 			messages.append(MessageAdd('go buy ssd la', 'text'))
 			messages.append(MessageAdd([1,1], 'sticker'))
+			ReplyMessage(replyToken,messages)
 
 
 		return 'SUCCEED'
