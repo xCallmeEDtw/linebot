@@ -58,6 +58,7 @@ def index():
 				ReplyMessage(replyToken,messages)
 		elif SplitText[0] == '抽':
 			if len(SplitText) >= 2:
+				print("ahoy")
 				myreply = RandomPicture(SplitText[1])
 			else:
 				myreply = RandomPicture('')
