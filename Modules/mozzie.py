@@ -1,5 +1,5 @@
 #myin = str(input())
-
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from time import sleep
@@ -12,9 +12,13 @@ def r6(text):
 
 	nums,titles = [],[] 
 	options = Options()
+	options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 	options.add_argument("--disable-notifications")
+	options.add_argument("--headless") #無頭模式
+	options.add_argument("--disable-dev-shm-usage")
+	options.add_argument("--no-sandbox")
 	 
-	chrome = webdriver.Chrome('./chromedriver', chrome_options=options)
+	chrome = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
 
 	chrome.get('https://r6.tracker.network/')
 	sleep(2)
