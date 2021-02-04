@@ -3,7 +3,7 @@ from flask import Flask,request
 from Modules.ReplyMessage import ReplyMessage
 from Modules.OPTmessage import MessageAdd
 from Modules.games import mora
-from Modules.mozzie import find_horo
+from Modules.mozzie2 import r6_operater
 from Modules.mozzie2 import r6_states
 
 # import random
@@ -40,23 +40,22 @@ def index():
 			myreply = find_horo(text)
 			messages.append(MessageAdd(myreply, 'text'))
 			ReplyMessage(replyToken,messages)
-		# elif text == 'r6':
-		# 	print("123")
-		# 	myreply = r6('Alan112398')
-		# 	print(myreply)
-		# 	messages.append(MessageAdd(myreply[0], 'text'))
-		# 	messages.append(MessageAdd(myreply[1], 'text'))
-		# 	messages.append(MessageAdd(myreply[2], 'text'))
-		# 	messages.append(MessageAdd(myreply[3], 'text'))
-		# 	messages.append(MessageAdd(myreply[4], 'text'))
-		# 	ReplyMessage(replyToken,messages)
-		elif SplitText[0] == 'r6' and len(SplitText) == 3:
+
+		elif SplitText[0] == 'r6' and len(SplitText) >= 3:
 			if SplitText[1] == 'states':
-				print("www")
 				myreply = r6_states(SplitText[2])
 				messages.append(MessageAdd("Wins: " + myreply[0], 'text'))
 				messages.append(MessageAdd("Win%: " + myreply[1], 'text'))
 				ReplyMessage(replyToken,messages)
+			elif SplitText[1] == 'operater' and len(SplitText) == 4:
+				myreply = r6_operater(SplitText[2],SplitText[3])
+				messages.append(MessageAdd('played time:' + myreply[1] +' '+myreply[2], 'text' ))
+				messages.append(MessageAdd('kills:' + myreply[3] + ' KD:'+ myreply[4], 'text'))
+				messages.append(MessageAdd('WINS:' + myreply[5] + ' Lossers:' + myreply[6], 'text'))
+				messages.append(MessageAdd('Wins%:'+ myreply[7], 'text'))
+				messages.append(MessageAdd('幹員特殊道具成功使用'+ myreply[-1] , 'text'))
+				ReplyMessage(replyToken,messages)
+
 				
 
 
