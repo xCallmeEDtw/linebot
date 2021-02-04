@@ -72,6 +72,7 @@ def find_horo(text):
 	 
 	chrome = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
 	chrome.get(web)
+	sleep(2)
 	soup = mBS(chrome.page_source, 'html.parser')
 	TodayContent = soup.select('.TODAY_CONTENT')
 	return(TodayContent[0].text)
