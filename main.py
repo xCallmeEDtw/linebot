@@ -4,7 +4,7 @@ from Modules.ReplyMessage import ReplyMessage
 from Modules.OPTmessage import MessageAdd
 from Modules.games import mora
 from Modules.mozzie2 import r6_states
-from Modules.horoscope import find_horo
+
 # import random
 app = Flask(__name__) #初始化
 #HTTP請求方式
@@ -35,10 +35,7 @@ def index():
 			messages.append(MessageAdd(myreply[0], 'text'))
 			messages.append(MessageAdd(myreply[1], 'text'))
 			ReplyMessage(replyToken,messages)
-		elif text in horos:
-			myreply = find_horo(text)
-			messages.append(MessageAdd(myreply, 'text'))
-			ReplyMessage(replyToken,messages)
+
 		# elif text == 'r6':
 		# 	print("123")
 		# 	myreply = r6('Alan112398')
