@@ -3,7 +3,7 @@ from flask import Flask,request
 from Modules.ReplyMessage import ReplyMessage
 from Modules.OPTmessage import MessageAdd
 from Modules.games import mora
-from Modules.mozzie import r6
+from Modules.mozzie2 import r6_states
 from Modules.horoscope import find_horo
 # import random
 app = Flask(__name__) #初始化
@@ -20,6 +20,7 @@ def index():
 		print(type(message))
 		replyToken = message.get('replyToken')
 		text = message.get('message').get('text')
+		SplitText = test.split()
 		print(text)
 		
 		if text == 'ssd':
@@ -35,18 +36,27 @@ def index():
 			ReplyMessage(replyToken,messages)
 		elif text in horos:
 			myreply = find_horo(text)
-			messages.append(MessageAdd(myreply, 'text'))
+			messages.append(MessageAdd("Wins: " + myreply[0], 'text'))
+			messages.append(MessageAdd("Win%: " + myreply[1], 'text'))
 			ReplyMessage(replyToken,messages)
-		elif text == 'r6':
-			print("123")
-			myreply = r6('Alan112398')
-			print(myreply)
-			messages.append(MessageAdd(myreply[0], 'text'))
-			messages.append(MessageAdd(myreply[1], 'text'))
-			messages.append(MessageAdd(myreply[2], 'text'))
-			messages.append(MessageAdd(myreply[3], 'text'))
-			messages.append(MessageAdd(myreply[4], 'text'))
-			ReplyMessage(replyToken,messages)
+		# elif text == 'r6':
+		# 	print("123")
+		# 	myreply = r6('Alan112398')
+		# 	print(myreply)
+		# 	messages.append(MessageAdd(myreply[0], 'text'))
+		# 	messages.append(MessageAdd(myreply[1], 'text'))
+		# 	messages.append(MessageAdd(myreply[2], 'text'))
+		# 	messages.append(MessageAdd(myreply[3], 'text'))
+		# 	messages.append(MessageAdd(myreply[4], 'text'))
+		# 	ReplyMessage(replyToken,messages)
+		elif SplitText[0] == 'r6' and len(SplitText) == 3:
+			if SplitText[1] == 'states':
+				myreply = r6_states(SplitText[2])
+				messages.append(MessageAdd(myreply, 'text'))
+				ReplyMessage(replyToken,messages)
+				
+
+
 
 		return 'go buy ssd la mother fker'
 	elif request.method == 'GET':
