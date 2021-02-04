@@ -20,7 +20,7 @@ def index():
 		print(type(message))
 		replyToken = message.get('replyToken')
 		text = message.get('message').get('text')
-		SplitText = test.split()
+		SplitText = text.split()
 		print(text)
 		
 		if text == 'ssd':
