@@ -3,6 +3,7 @@ from flask import Flask,request
 from Modules.ReplyMessage import ReplyMessage
 from Modules.OPTmessage import MessageAdd
 from Modules.games import mora
+from Modules.mozzie import find_horo
 from Modules.mozzie2 import r6_states
 
 # import random
@@ -35,7 +36,10 @@ def index():
 			messages.append(MessageAdd(myreply[0], 'text'))
 			messages.append(MessageAdd(myreply[1], 'text'))
 			ReplyMessage(replyToken,messages)
-
+		elif text in horos:
+			myreply = find_horo(text)
+			messages.append(MessageAdd(myreply, 'text'))
+			ReplyMessage(replyToken,messages)
 		# elif text == 'r6':
 		# 	print("123")
 		# 	myreply = r6('Alan112398')
