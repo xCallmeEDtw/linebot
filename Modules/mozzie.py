@@ -47,9 +47,6 @@ def r6(text):
 	print('你媽勝負比:',find_op[7])
 	return(find_op)
 def find_horo(text):
-	from selenium import webdriver
-	from selenium.webdriver.chrome.options import Options
-	from time import sleep
 	myDict = {
 	 	"水瓶": '10',
 	 	'雙魚': '11',
