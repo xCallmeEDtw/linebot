@@ -4,6 +4,7 @@ from Modules.ReplyMessage import ReplyMessage
 from Modules.OPTmessage import MessageAdd
 from Modules.games import mora
 from Modules.mozzie import r6
+from Modules.horoscope import find_horo
 # import random
 app = Flask(__name__) #初始化
 #HTTP請求方式
@@ -11,6 +12,7 @@ app = Flask(__name__) #初始化
 # {'type': 'message', 'replyToken': '401f1beb096e4bd094fca05f1162e588', 'source': {'userId': 'Udde25b6bc63d084bbbf55c53ff0826d4', 'type': 'user'}, 'timestamp': 1612339264295, 'mode': 'active', 'message': {'type': 'sticker', 'id': '13493434162018', 'stickerId': '140', 'packageId': '2', 'stickerResourceType': 'STATIC', 'keywords': ['chase', 'play', 'skip', 'enjoy', 'Happy']}}
 def index():
 	con = ['剪刀' ,'石頭','布']
+	horos = ["水瓶",'雙魚','牡羊','金牛','雙子','巨蟹','獅子','處女','天平','天蠍','射手','魔羯']
 	messages = []
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
@@ -30,6 +32,10 @@ def index():
 			myreply = mora(text)
 			messages.append(MessageAdd(myreply[0], 'text'))
 			messages.append(MessageAdd(myreply[1], 'text'))
+			ReplyMessage(replyToken,messages)
+		elif text in horos:
+			myreply = find_horo(text)
+			messages.append(MessageAdd(myreply, 'text'))
 			ReplyMessage(replyToken,messages)
 		elif text == 'r6':
 			print("123")
