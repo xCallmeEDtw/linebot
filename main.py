@@ -9,7 +9,7 @@ app = Flask(__name__) #初始化
 def index():
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
-		print(message)
+		print(request.get_json())
 		print(type(message))
 		replyToken = message.get('replyToken')
 		text = message.get('message').get('text')
