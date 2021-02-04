@@ -16,6 +16,7 @@ def r6_states(text):
 def r6_operater(player,operator):
 	op_id ={
 	'kali': '[data-index="2:17"]'
+	
 	}
 	web = f'https://r6.tracker.network/profile/pc/{player}/operators'
 

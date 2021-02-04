@@ -5,6 +5,7 @@ from Modules.OPTmessage import MessageAdd
 from Modules.games import mora
 from Modules.mozzie2 import r6_operater
 from Modules.mozzie2 import r6_states
+from Modules.BigData import RandomPicture
 
 # import random
 app = Flask(__name__) #初始化
@@ -55,10 +56,13 @@ def index():
 				messages.append(MessageAdd('Wins%:'+ myreply[7], 'text'))
 				messages.append(MessageAdd('幹員特殊道具成功使用'+ myreply[-1] , 'text'))
 				ReplyMessage(replyToken,messages)
-
-				
-
-
+		elif SplitText[0] == 抽:
+			if len(SplitText) >= 2:
+				myreply = RandomPicture(SplitText[1])
+			else:
+				myreply = RandomPicture('')
+			messages.append(MessageAdd(myreply, 'image'))
+			ReplyMessage(replyToken,messages)
 
 		return 'go buy ssd la mother fker'
 	elif request.method == 'GET':
