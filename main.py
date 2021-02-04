@@ -19,7 +19,7 @@ def index():
 			messages = []
 			messages.append(MessageAdd('go buy ssd la', 'text'))
 			messages.append(MessageAdd([1,1], 'sticker'))
-			messages.append(MessageAdd(https://images5.alphacoders.com/314/thumb-1920-314574.png, 'image'))
+			messages.append(MessageAdd('https://images5.alphacoders.com/314/thumb-1920-314574.png', 'image'))
 			ReplyMessage(replyToken,messages)
 
 		return 'go buy ssd la mother fker'
