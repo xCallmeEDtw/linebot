@@ -12,7 +12,7 @@ def MessageAdd(m_add,m_type):
     elif m_type =='image':
         
         addtion={
-                "type":"text",
+                "type":"image",
                 "originalContentUrl": m_add,
                 "previewImageUrl": m_add
                 }
