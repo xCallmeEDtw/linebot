@@ -31,7 +31,7 @@ def index():
 				text = 1
 			elif text == con[2]:
 				text = 2
-			myran = random.randient(0,2)
+			myran = random.randint(0,2)
 			if myran == text:
 				myreply = result[1]
 			elif (text == 0 and myran == 2) or (text == 1 and myran == 0) or (text == 2 and myran == 1):
