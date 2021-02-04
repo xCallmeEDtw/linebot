@@ -32,6 +32,7 @@ def index():
 			messages.append(MessageAdd(myreply[1], 'text'))
 			ReplyMessage(replyToken,messages)
 		elif text == 'r6':
+			print("123")
 			myreply = r6('Alan112398')
 			print(myreply)
 			# messages.append(MessageAdd(myreply[0], 'text'))
