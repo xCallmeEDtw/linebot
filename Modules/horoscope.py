@@ -17,10 +17,10 @@ def find_horo(text):
 	 	'魔羯': '9',
 	 }
 	web = f'https://astro.click108.com.tw/daily_10.php?iAstro={myDict.get(text)}'
-
+	r = req.get(web)
 	titles= []
 	images = []
-	print(r.status_code)
+	#print(r.status_code)
 
 	#print(r.text)
 	soup = mBS(r.text, 'html.parser')
