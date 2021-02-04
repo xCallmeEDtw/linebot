@@ -39,7 +39,7 @@ def index():
 				myreply = result[0]
 			else:
 				myreply = result[2]
-		messages.append(MessageAdd(con[text], 'text'))
+		messages.append(MessageAdd(con[myran], 'text'))
 		messages.append(MessageAdd(myreply, 'text'))
 		ReplyMessage(replyToken,messages)
 
