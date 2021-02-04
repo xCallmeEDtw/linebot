@@ -15,4 +15,4 @@ def mora(text):
 		myreply = result[0]
 	else:
 		myreply = result[2]
-	return [myran,myreply]
+	return [con[myran],myreply]

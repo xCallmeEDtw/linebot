@@ -26,28 +26,10 @@ def index():
 			messages.append(MessageAdd('https://images5.alphacoders.com/314/thumb-1920-314574.png', 'image'))
 			ReplyMessage(replyToken,messages)
 		elif text in con:
-			# if text == con[0]:
-			# 	text =0
-			# elif text == con[1]:
-			# 	text = 1
-			# elif text == con[2]:
-			# 	text = 2
-			# myran = random.randint(0,2)
-			# if myran == text:
-			# 	myreply = result[1]
-			# elif (text == 0 and myran == 2) or (text == 1 and myran == 0) or (text == 2 and myran == 1):
-			# 	myreply = result[0]
-			# else:
-				# myreply = result[2]
 			myreply = mora(text)
 			messages.append(MessageAdd(myreply[0], 'text'))
 			messages.append(MessageAdd(myreply[1], 'text'))
 			ReplyMessage(replyToken,messages)
-
-
-
-
-
 
 		return 'go buy ssd la mother fker'
 	elif request.method == 'GET':
