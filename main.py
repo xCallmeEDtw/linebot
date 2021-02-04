@@ -10,6 +10,7 @@ app = Flask(__name__) #初始化
 def index():
 	con = ['剪刀' ,'石頭','布']
 	result = ['You win', "Even", 'You lose']
+	messages = []
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
 		print(request.get_json())
@@ -19,7 +20,7 @@ def index():
 		print(text)
 		
 		if text == 'ssd':
-			messages = []
+			
 			messages.append(MessageAdd('go buy ssd la', 'text'))
 			messages.append(MessageAdd([1,1], 'sticker'))
 			messages.append(MessageAdd('https://images5.alphacoders.com/314/thumb-1920-314574.png', 'image'))
