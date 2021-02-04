@@ -2,11 +2,14 @@
 from flask import Flask,request
 from Modules.ReplyMessage import ReplyMessage
 from Modules.OPTmessage import MessageAdd
+import random
 app = Flask(__name__) #初始化
 #HTTP請求方式
 @app.route('/', methods=['GET', 'POST']) #根目錄
 # {'type': 'message', 'replyToken': '401f1beb096e4bd094fca05f1162e588', 'source': {'userId': 'Udde25b6bc63d084bbbf55c53ff0826d4', 'type': 'user'}, 'timestamp': 1612339264295, 'mode': 'active', 'message': {'type': 'sticker', 'id': '13493434162018', 'stickerId': '140', 'packageId': '2', 'stickerResourceType': 'STATIC', 'keywords': ['chase', 'play', 'skip', 'enjoy', 'Happy']}}
 def index():
+	con = ['剪刀' ,'石頭','布']
+	result = ['You win', "Even", 'You lose']
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
 		print(request.get_json())
@@ -21,6 +24,29 @@ def index():
 			messages.append(MessageAdd([1,1], 'sticker'))
 			messages.append(MessageAdd('https://images5.alphacoders.com/314/thumb-1920-314574.png', 'image'))
 			ReplyMessage(replyToken,messages)
+		elif text in con:
+			if text == con[0]:
+				text =0
+			elif text == con[1]:
+				text = 1
+			elif text == con[2]:
+				text = 2
+			myran = random.randient(0,2)
+			if myran == text:
+				myreply = result[1]
+			elif (text == 0 and myran == 2) or (text == 1 and myran == 0) or (text == 2 and myran == 1):
+				myreply = result[0]
+			else:
+				myreply = result[2]
+		messages.append(MessageAdd(myreply, 'text'))
+		ReplyMessage(replyToken,messages)
+
+
+
+
+
+
+
 
 		return 'go buy ssd la mother fker'
 	elif request.method == 'GET':
