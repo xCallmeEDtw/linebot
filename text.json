@@ -1,0 +1,16 @@
+{
+	"events": [
+		{
+			"type": "message",
+			"replyToken": "36366c4324a8418d838c19a0e80c773e",
+			"source": {
+				"userId": "Udde25b6bc63d084bbbf55c53ff0826d4",
+				"type": "user"
+			},
+			"timestamp": 1612402659111,
+			"mode": "active",
+			"message": { "type": "text", "id": "13497454552044", "text": "ssd" }
+		}
+	],
+	"destination": "U7572794abfc12418911b82cc02f442a5"
+}
