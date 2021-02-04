@@ -6,6 +6,7 @@ from time import sleep
 
 from bs4 import BeautifulSoup as mBS
 def r6(text):
+	print("hi")
 	op_id = '[data-index="2:17"]'
 	find_name = text
 

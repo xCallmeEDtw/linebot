@@ -33,12 +33,13 @@ def index():
 			ReplyMessage(replyToken,messages)
 		elif text == r6:
 			myreply = r6('Alan112398')
-			messages.append(MessageAdd(myreply[0], 'text'))
-			messages.append(MessageAdd(myreply[1], 'text'))
-			messages.append(MessageAdd(myreply[2], 'text'))
-			messages.append(MessageAdd(myreply[3], 'text'))
-			messages.append(MessageAdd(myreply[4], 'text'))
-			ReplyMessage(replyToken,messages)
+			print(myreply)
+			# messages.append(MessageAdd(myreply[0], 'text'))
+			# messages.append(MessageAdd(myreply[1], 'text'))
+			# messages.append(MessageAdd(myreply[2], 'text'))
+			# messages.append(MessageAdd(myreply[3], 'text'))
+			# messages.append(MessageAdd(myreply[4], 'text'))
+			# ReplyMessage(replyToken,messages)
 
 		return 'go buy ssd la mother fker'
 	elif request.method == 'GET':
