@@ -17,12 +17,13 @@ def index():
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
 		print(request.get_json())
-		print(type(message))
+		#print(type(message))
 		replyToken = message.get('replyToken')
 		text = message.get('message').get('text')
 		SplitText = text.split()
 		print(text)
-		
+		print(SplitText)
+		print(SplitText[0],SplitText[1])
 		if text == 'ssd':
 			
 			messages.append(MessageAdd('go buy ssd la', 'text'))
@@ -51,6 +52,7 @@ def index():
 		# 	ReplyMessage(replyToken,messages)
 		elif SplitText[0] == 'r6' and len(SplitText) == 3:
 			if SplitText[1] == 'states':
+				print("www")
 				myreply = r6_states(SplitText[2])
 				messages.append(MessageAdd(myreply, 'text'))
 				ReplyMessage(replyToken,messages)
