@@ -9,7 +9,7 @@ app = Flask(__name__) #初始化
 # {'type': 'message', 'replyToken': '401f1beb096e4bd094fca05f1162e588', 'source': {'userId': 'Udde25b6bc63d084bbbf55c53ff0826d4', 'type': 'user'}, 'timestamp': 1612339264295, 'mode': 'active', 'message': {'type': 'sticker', 'id': '13493434162018', 'stickerId': '140', 'packageId': '2', 'stickerResourceType': 'STATIC', 'keywords': ['chase', 'play', 'skip', 'enjoy', 'Happy']}}
 def index():
 	con = ['剪刀' ,'石頭','布']
-	result = ['You win', "Even", 'You lose']
+	result = ['You win~', "平手", '哈，輸了吧廢物']
 	messages = []
 	if request.method == 'POST':
 		message = request.get_json().get('events')[0]
@@ -39,6 +39,7 @@ def index():
 				myreply = result[0]
 			else:
 				myreply = result[2]
+		messages.append(MessageAdd(con[text], 'text'))
 		messages.append(MessageAdd(myreply, 'text'))
 		ReplyMessage(replyToken,messages)
 
