@@ -56,7 +56,7 @@ def index():
 				messages.append(MessageAdd('Wins%:'+ myreply[7], 'text'))
 				messages.append(MessageAdd('幹員特殊道具成功使用'+ myreply[-1] , 'text'))
 				ReplyMessage(replyToken,messages)
-		elif SplitText[0] == 抽:
+		elif SplitText[0] == '抽':
 			if len(SplitText) >= 2:
 				myreply = RandomPicture(SplitText[1])
 			else:
