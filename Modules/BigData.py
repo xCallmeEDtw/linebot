@@ -22,6 +22,7 @@ def RandomPicture(text):
         print(cards[i]['src'])
         myreply.append(cards[i]['src'])
     MyRan =  random.randint(0,len(myreply))
-    return myreply[MyRan]
+    print(myreply,MyRan)
+    return myreply[0]
 
 
