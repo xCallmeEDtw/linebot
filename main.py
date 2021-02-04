@@ -23,7 +23,6 @@ def index():
 		SplitText = text.split()
 		print(text)
 		print(SplitText)
-		print(SplitText[0],SplitText[1])
 		if text == 'ssd':
 			
 			messages.append(MessageAdd('go buy ssd la', 'text'))
