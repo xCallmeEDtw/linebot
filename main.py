@@ -37,8 +37,7 @@ def index():
 			ReplyMessage(replyToken,messages)
 		elif text in horos:
 			myreply = find_horo(text)
-			messages.append(MessageAdd("Wins: " + myreply[0], 'text'))
-			messages.append(MessageAdd("Win%: " + myreply[1], 'text'))
+			messages.append(MessageAdd(myreply, 'text'))
 			ReplyMessage(replyToken,messages)
 		# elif text == 'r6':
 		# 	print("123")
@@ -54,7 +53,8 @@ def index():
 			if SplitText[1] == 'states':
 				print("www")
 				myreply = r6_states(SplitText[2])
-				messages.append(MessageAdd(myreply, 'text'))
+				messages.append(MessageAdd("Wins: " + myreply[0], 'text'))
+				messages.append(MessageAdd("Win%: " + myreply[1], 'text'))
 				ReplyMessage(replyToken,messages)
 				
 
