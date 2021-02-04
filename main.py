@@ -3,6 +3,7 @@ from flask import Flask,request
 from Modules.ReplyMessage import ReplyMessage
 from Modules.OPTmessage import MessageAdd
 from Modules.games import mora
+from Modules.mozzie import r6
 # import random
 app = Flask(__name__) #初始化
 #HTTP請求方式
