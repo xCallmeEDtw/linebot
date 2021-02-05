@@ -5,6 +5,7 @@ import os
 from PushMessage import PushMessage
 
 def sensor():
+    print('123')
     url= 'https://gobuyssd.herokuapp.com/'
     r = requests.get(url)
     print(r.status_code)
