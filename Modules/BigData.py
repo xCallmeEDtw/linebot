@@ -16,7 +16,7 @@ def RandomPicture(text):
     options.add_argument("--no-sandbox")
     #chrome = webdriver.Chrome('./chromedriver', chrome_options=options)
     chrome = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
-    #chrome.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500')
+    chrome.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500')
     soup = mBS(chrome.page_source, 'html.parser')
     cards = (soup.select('[loading="lazy"]'))
     for i in range(0,len(cards),2):
