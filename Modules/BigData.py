@@ -8,6 +8,7 @@ def RandomPicture(text):
         web = f'https://wall.alphacoders.com/search.php?search={text}'
 
     r = req.get(web)
+    print(r.status_code)
     myreply = []
     soup = mBS(r.text, 'html.parser')
     cards = (soup.select('[loading="lazy"]'))
