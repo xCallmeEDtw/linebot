@@ -62,7 +62,7 @@ def index():
 				myreply = RandomPicture('')
 			messages.append(MessageAdd(myreply, 'image'))
 			ReplyMessage(replyToken,messages)
-		elif userMessage == 'test':
+		elif text == 'test':
 			flexMessage ={"type": "bubble",
 						  "hero": {
 						    "type": "image",
