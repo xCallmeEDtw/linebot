@@ -3,7 +3,7 @@ def FlexEdit():
 	  "type": "bubble",
 	  "hero": {
 	    "type": "image",
-	    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+	    "url": "https://images8.alphacoders.com/533/thumb-1920-533007.png",
 	    "size": "full",
 	    "aspectRatio": "20:13",
 	    "aspectMode": "cover",
@@ -19,7 +19,7 @@ def FlexEdit():
 	    "contents": [
 	      {
 	        "type": "text",
-	        "text": "Brown Cafe",
+	        "text": "C8763",
 	        "weight": "bold",
 	        "size": "xl",
 	        "contents": []
