@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from time import sleep
 
 def RandomPicture(text):
+    print('123')
     myreply = []
     options = Options()
     options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -14,14 +15,18 @@ def RandomPicture(text):
     options.add_argument("--headless") #無頭模式
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
+    print('345')
     #chrome = webdriver.Chrome('./chromedriver', chrome_options=options)
     chrome = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
     chrome.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500')
     soup = mBS(chrome.page_source, 'html.parser')
+    print(soup)
     cards = (soup.select('[loading="lazy"]'))
+    print(cards)
     for i in range(0,len(cards),2):
+        print(cards[i])
         myreply.append(cards[i]['src'])
-    MyRan =  random.randint(0,len(myreply)-1)
+    MyRan =  random.randint(0,len(myreply))
     #print(myreply,MyRan)
     return myreply[MyRan]
 
