@@ -194,7 +194,7 @@ def FlexEdit(text): #call
 	        "weight": "bold",
 	        "size": "lg",
 	        "align": "center",
-	        "wrap": true,
+	        "wrap": True,
 	        "contents": []
 	      }
 	    ]
