@@ -225,6 +225,7 @@ def index():
     		"altText": "Hello",
     		"contents": flexMessage
 		}]
+			ReplyMessage(replyToken,messages)
 
 		return 'go buy ssd la mother fker'
 	elif request.method == 'GET':
