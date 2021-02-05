@@ -9,14 +9,14 @@ from time import sleep
 def RandomPicture(text):
     myreply = []
     options = Options()
-    #options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-    #options.add_argument("--disable-notifications")
-    #options.add_argument("--headless") #無頭模式
-    #options.add_argument("--disable-dev-shm-usage")
+    options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    options.add_argument("--disable-notifications")
+    options.add_argument("--headless") #無頭模式
+    options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
-    chrome = webdriver.Chrome('./chromedriver', chrome_options=options)
-    #chrome = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
-    chrome.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500')
+    #chrome = webdriver.Chrome('./chromedriver', chrome_options=options)
+    chrome = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
+    #chrome.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500')
     soup = mBS(chrome.page_source, 'html.parser')
     cards = (soup.select('[loading="lazy"]'))
     for i in range(0,len(cards),2):
@@ -26,7 +26,7 @@ def RandomPicture(text):
     return myreply[MyRan]
 
 
-    
+
 # def RandomPicture(text):
 #     # if text == '':
 #     web = 'https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500?key=cae38234-ad07-43e9-b14e-36ff23e0c56b'
