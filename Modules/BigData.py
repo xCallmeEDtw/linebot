@@ -46,5 +46,5 @@ def RandomPicture(text):
     MyRan =  random.randint(0,len(myreply)-1)
     #print(myreply,MyRan)
     return myreply[MyRan]
-
+#123
 
