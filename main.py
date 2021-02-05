@@ -84,7 +84,7 @@ def index():
 			soup = Soup(html.content, from_encoding="utf-8")
 
 			sp = soup.find_all("div", {"class" : "layout-div"})[2]
-			print sp.text
+			print(sp.text)
 
 
 
