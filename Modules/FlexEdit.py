@@ -210,7 +210,7 @@ def FlexEdit(text): #call
 	          "label": "官方網站",
 	          "uri": "https://www.ubisoft.com/zh-tw/game/rainbow-six/siege/game-info/operators/kali"
 	        },
-	        "color": "#EDECC8FF",
+	        "color": "#21AEB3FF",
 	        "margin": "xs",
 	        "height": "sm",
 	        "style": "link"
