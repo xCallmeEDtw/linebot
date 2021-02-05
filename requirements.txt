@@ -7,5 +7,4 @@ requests2
 beautifulsoup4
 Flask-Mail
 APScheduler
-urllib
 selenium
