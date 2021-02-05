@@ -8,7 +8,7 @@ from Modules.mozzie2 import r6_states
 from Modules.BigData import RandomPicture
 from Modules.BigData import RandomPicture
 from Modules.FlexEdit import FlexEdit
-from Modules.MyScheduler2 import MyScheduler
+from Modules.MyScheduler import MyScheduler
 
 MyScheduler()
 # import random
