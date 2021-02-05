@@ -27,7 +27,6 @@ def index():
 		print(SplitText)
 
 		if text == 'ssd':
-			
 			messages.append(MessageAdd('go buy ssd la', 'text'))
 			messages.append(MessageAdd([1,1], 'sticker'))
 			messages.append(MessageAdd('https://images5.alphacoders.com/314/thumb-1920-314574.png', 'image'))
@@ -58,7 +57,6 @@ def index():
 				ReplyMessage(replyToken,messages)
 		elif SplitText[0] == '抽':
 			if len(SplitText) >= 2:
-				print("ahoy")
 				myreply = RandomPicture(SplitText[1])
 			else:
 				myreply = RandomPicture('')
