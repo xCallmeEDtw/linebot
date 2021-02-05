@@ -28,8 +28,3 @@ def MyScheduler():
 
     sched.start()
     return ''
-interval = IntervalTrigger(
-    minutes= 1,
-    start_date='2019-4-24 08:00:00',
-    end_date='2099-4-24 08:00:00',
-    timezone='Asia/Taipei')
