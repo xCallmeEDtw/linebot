@@ -38,6 +38,7 @@ def RandomPicture(text):
     # r = req.get(web,headers)
     myHeaders = {'Accept': 'application/vnd.heroku+json; version=3'} 
     r = requests.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500', headers=myHeaders, auth=HerokuBearerAuth('cae38234-ad07-43e9-b14e-36ff23e0c56b')) 
+    print(r.status_code)
     myreply = []
     soup = mBS(r.text, 'html.parser')
     cards = (soup.select('[loading="lazy"]'))
@@ -46,5 +47,5 @@ def RandomPicture(text):
     MyRan =  random.randint(0,len(myreply)-1)
     #print(myreply,MyRan)
     return myreply[MyRan]
-#123
+
 
