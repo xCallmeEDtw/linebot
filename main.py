@@ -6,7 +6,6 @@ from Modules.games import mora
 from Modules.mozzie2 import r6_operater
 from Modules.mozzie2 import r6_states
 from Modules.BigData import RandomPicture
-from Modules.BigData import RandomPicture
 from Modules.FlexEdit import FlexEdit
 from Modules.MyScheduler import MyScheduler
 
