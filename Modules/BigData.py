@@ -1,7 +1,17 @@
 import os
-import requests as req
+import requests
 from bs4 import BeautifulSoup as mBS
 import random
+# class HerokuBearerAuth(requests.auth.AuthBase): 
+#     def __init__(self, api_key): 
+#      self.api_key = api_key 
+
+#     def __call__(self, r): 
+#      r.headers.update({'Authorization': 'Bearer {}'.format(self.api_key)}) 
+#      return r 
+
+# myHeaders = {'Accept': 'application/vnd.heroku+json; version=3'} 
+# response = requests.get(myUrl, headers=myHeaders, auth=HerokuBearerAuth(api_key)) 
 def RandomPicture(text):
     if text == '':
         web = 'https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500'
