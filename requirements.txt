@@ -8,3 +8,4 @@ beautifulsoup4
 Flask-Mail
 APScheduler
 selenium
+lxml
