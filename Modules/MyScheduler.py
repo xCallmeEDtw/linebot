@@ -2,16 +2,16 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import requests
 import os
-from Modules.PushMessage import PushMessage
+from PushMessage import PushMessage
 
 def sensor():
     url= 'https://gobuyssd.herokuapp.com/'
     r = requests.get(url)
     print(r.text)  
     
-def work1():
-    r = requests.get('https://gobuyssd.herokuapp.com/')
-    print(r.text)   
+# def work1():
+#     r = requests.get('https://gobuyssd.herokuapp.com/')
+#     print(r.text)   
 
 def MyScheduler():
     sched = BackgroundScheduler(daemon=True)
