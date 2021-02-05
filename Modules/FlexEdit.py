@@ -1,4 +1,4 @@
-def FlexEdit():
+def FlexEdit(): #call
 	flexMessage ={
 	  "type": "bubble",
 	  "hero": {
@@ -133,8 +133,8 @@ def FlexEdit():
 	        "type": "button",
 	        "action": {
 	          "type": "uri",
-	          "label": "CALL",
-	          "uri": "https://linecorp.com"
+	          "label": "幫我稱十秒",
+	          "uri": "https://acg.gamer.com.tw/acgDetail.php?s=91867"
 	        },
 	        "height": "sm",
 	        "style": "link"
@@ -144,7 +144,7 @@ def FlexEdit():
 	        "action": {
 	          "type": "uri",
 	          "label": "WEBSITE",
-	          "uri": "https://linecorp.com"
+	          "uri": "https://forum.gamer.com.tw/A.php?bsn=42388"
 	        },
 	        "height": "sm",
 	        "style": "link"
