@@ -13,7 +13,7 @@ class HerokuBearerAuth(requests.auth.AuthBase):
 
 def RandomPicture(text):
     # if text == '':
-    #     web = 'https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500'
+    web = 'https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500?key=cae38234-ad07-43e9-b14e-36ff23e0c56b'
     # else:
     #     web = f'https://wall.alphacoders.com/search.php?search={text}'
     headers= {
@@ -33,11 +33,11 @@ def RandomPicture(text):
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36',
-    'Accept': 'application/vnd.heroku+json; version=3'
+
     }
-    # r = req.get(web,headers)
-    #myHeaders = {'Accept': 'application/vnd.heroku+json; version=3'} 
-    r = requests.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500?key=cae38234-ad07-43e9-b14e-36ff23e0c56b', headers=headers, auth=HerokuBearerAuth('cae38234-ad07-43e9-b14e-36ff23e0c56b')) 
+    r = requests.get(web,headers, auth=HerokuBearerAuth('cae38234-ad07-43e9-b14e-36ff23e0c56b'))
+    myHeaders = {'Accept': 'application/vnd.heroku+json; version=3'} 
+    #r = requests.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500?key=cae38234-ad07-43e9-b14e-36ff23e0c56b', headers=headers, auth=HerokuBearerAuth('cae38234-ad07-43e9-b14e-36ff23e0c56b')) 
     print(r.status_code)
     myreply = []
     soup = mBS(r.text, 'html.parser')

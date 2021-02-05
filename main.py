@@ -8,6 +8,9 @@ from Modules.mozzie2 import r6_states
 from Modules.BigData import RandomPicture
 from Modules.BigData import RandomPicture
 from Modules.FlexEdit import FlexEdit
+from Modules.MyScheduler import MyScheduler
+
+MyScheduler()
 # import random
 app = Flask(__name__) #初始化
 #HTTP請求方式
