@@ -6,4 +6,5 @@ psycopg2-binary
 requests2
 beautifulsoup4
 Flask-Mail
-apscheduler
+APScheduler
+urllib
