@@ -65,7 +65,7 @@ def index():
 			ReplyMessage(replyToken,messages)
 		elif text == 'test':
 			
-			messages.append([FlexEdit(),"caffee"],'flex')
+			messages.append(MessageAdd([FlexEdit(),"caffee"],'flex'))
 
 			ReplyMessage(replyToken,messages)
 
