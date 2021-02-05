@@ -19,8 +19,9 @@ def RandomPicture(text):
     #chrome = webdriver.Chrome('./chromedriver', chrome_options=options)
     chrome = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
     chrome.get('https://wall.alphacoders.com/by_category.php?id=3&name=Anime+Wallpapers&page=500')
+    sleep(3)
     soup = mBS(chrome.page_source, 'html.parser')
-    print(soup)
+    #print(soup)
     cards = (soup.select('[loading="lazy"]'))
     
     #print(cards)
