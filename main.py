@@ -63,7 +63,6 @@ def index():
 			messages.append(MessageAdd(myreply, 'image'))
 			ReplyMessage(replyToken,messages)
 		elif userMessage == 'test':
-			
 			flexMessage ={"type": "bubble",
 						  "hero": {
 						    "type": "image",
@@ -178,7 +177,7 @@ def index():
 						                "size": "sm",
 						                "color": "#666666",
 						                "flex": 5,
-						                "wrap": true,
+						                "wrap": True,
 						                "contents": []
 						              }
 						            ]
