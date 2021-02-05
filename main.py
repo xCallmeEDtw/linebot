@@ -6,7 +6,8 @@ from Modules.games import mora
 from Modules.mozzie2 import r6_operater
 from Modules.mozzie2 import r6_states
 from Modules.BigData import RandomPicture
-
+from Modules.BigData import RandomPicture
+from Modules.FlexEdit import FlexEdit
 # import random
 app = Flask(__name__) #初始化
 #HTTP請求方式
@@ -63,168 +64,9 @@ def index():
 			messages.append(MessageAdd(myreply, 'image'))
 			ReplyMessage(replyToken,messages)
 		elif text == 'test':
-			flexMessage ={"type": "bubble",
-						  "hero": {
-						    "type": "image",
-						    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-						    "size": "full",
-						    "aspectRatio": "20:13",
-						    "aspectMode": "cover",
-						    "action": {
-						      "type": "uri",
-						      "label": "Line",
-						      "uri": "https://linecorp.com/"
-						    }
-						  },
-						  "body": {
-						    "type": "box",
-						    "layout": "vertical",
-						    "contents": [
-						      {
-						        "type": "text",
-						        "text": "Brown Cafe",
-						        "weight": "bold",
-						        "size": "xl",
-						        "contents": []
-						      },
-						      {
-						        "type": "box",
-						        "layout": "baseline",
-						        "margin": "md",
-						        "contents": [
-						          {
-						            "type": "icon",
-						            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-						            "size": "sm"
-						          },
-						          {
-						            "type": "icon",
-						            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-						            "size": "sm"
-						          },
-						          {
-						            "type": "icon",
-						            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-						            "size": "sm"
-						          },
-						          {
-						            "type": "icon",
-						            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-						            "size": "sm"
-						          },
-						          {
-						            "type": "icon",
-						            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png",
-						            "size": "sm"
-						          },
-						          {
-						            "type": "text",
-						            "text": "4.0",
-						            "size": "sm",
-						            "color": "#999999",
-						            "flex": 0,
-						            "margin": "md",
-						            "contents": []
-						          }
-						        ]
-						      },
-						      {
-						        "type": "box",
-						        "layout": "vertical",
-						        "spacing": "sm",
-						        "margin": "lg",
-						        "contents": [
-						          {
-						            "type": "box",
-						            "layout": "baseline",
-						            "spacing": "sm",
-						            "contents": [
-						              {
-						                "type": "text",
-						                "text": "Place",
-						                "size": "sm",
-						                "color": "#AAAAAA",
-						                "flex": 1,
-						                "contents": []
-						              },
-						              {
-						                "type": "text",
-						                "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
-						                "size": "sm",
-						                "color": "#666666",
-						                "flex": 5,
-						                "wrap": True,
-						                "contents": []
-						              }
-						            ]
-						          },
-						          {
-						            "type": "box",
-						            "layout": "baseline",
-						            "spacing": "sm",
-						            "contents": [
-						              {
-						                "type": "text",
-						                "text": "Time",
-						                "size": "sm",
-						                "color": "#AAAAAA",
-						                "flex": 1,
-						                "contents": []
-						              },
-						              {
-						                "type": "text",
-						                "text": "10:00 - 23:00",
-						                "size": "sm",
-						                "color": "#666666",
-						                "flex": 5,
-						                "wrap": True,
-						                "contents": []
-						              }
-						            ]
-						          }
-						        ]
-						      }
-						    ]
-						  },
-						  "footer": {
-						    "type": "box",
-						    "layout": "vertical",
-						    "flex": 0,
-						    "spacing": "sm",
-						    "contents": [
-						      {
-						        "type": "button",
-						        "action": {
-						          "type": "uri",
-						          "label": "CALL",
-						          "uri": "https://linecorp.com"
-						        },
-						        "height": "sm",
-						        "style": "link"
-						      },
-						      {
-						        "type": "button",
-						        "action": {
-						          "type": "uri",
-						          "label": "WEBSITE",
-						          "uri": "https://linecorp.com"
-						        },
-						        "height": "sm",
-						        "style": "link"
-						      },
-						      {
-						        "type": "spacer",
-						        "size": "sm"
-						      }
-						    ]
-						  }
-						}
+			
+			messages.append([FlexEdit(),"caffee"],'flex')
 
-			messages =[{
-    		"type": "flex",
-    		"altText": "Hello",
-    		"contents": flexMessage
-		}]
 			ReplyMessage(replyToken,messages)
 
 		return 'go buy ssd la mother fker'

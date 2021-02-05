@@ -22,4 +22,10 @@ def MessageAdd(m_add,m_type):
                 "type":"text",
                 "text": m_add
                 }
+    elif m_type == 'flex':
+        addtion = {
+            "type": "flex",
+            "altText": m_add[0],
+            "contents": m_add[1]
+        }
     return addtion
