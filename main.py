@@ -8,7 +8,8 @@ from Modules.mozzie2 import r6_states
 #from Modules.BigData import RandomPicture
 from Modules.FlexEdit import FlexEdit
 from Modules.MyScheduler import MyScheduler
-
+import os
+from bs4 import BeautifulSoup as Soup
 MyScheduler()
 # import random
 app = Flask(__name__) #初始化
