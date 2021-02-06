@@ -71,20 +71,20 @@ def index():
 			messages.append(MessageAdd(["caffee",FlexEdit(2)],'flex'))
 
 			ReplyMessage(replyToken,messages)
-		# elif text == 'test2':
-		# 	proxyDict = {
-		#     "http"  : os.environ.get('FIXIE_URL', ''),
-		#     "https" : os.environ.get('FIXIE_URL', '')
-		# 	}
+		elif text == 'test2':
+			proxyDict = {
+		    "http"  : os.environ.get('FIXIE_URL', ''),
+		    "https" : os.environ.get('FIXIE_URL', '')
+			}
 
-		# 	url = "https://telebears.berkeley.edu/enrollment-osoc/osc"
-		# 	code = "26187"
-		# 	values = dict(_InField1 = "RESTRIC", _InField2 = code, _InField3 = "13D2")
-		# 	html = requests.post(url, params=values, proxies=proxyDict)
-		# 	soup = Soup(html.content, from_encoding="utf-8")
+			url = "https://telebears.berkeley.edu/enrollment-osoc/osc"
+			code = "26187"
+			values = dict(_InField1 = "RESTRIC", _InField2 = code, _InField3 = "13D2")
+			html = requests.post(url, params=values, proxies=proxyDict)
+			soup = Soup(html.content, from_encoding="utf-8")
 
-		# 	sp = soup.find_all("div", {"class" : "layout-div"})[2]
-		# 	print(sp.text)
+			sp = soup.find_all("div", {"class" : "layout-div"})[2]
+			print(sp.text)
 
 
 
