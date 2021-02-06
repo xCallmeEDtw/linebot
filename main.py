@@ -9,7 +9,7 @@ from Modules.mozzie2 import r6_states
 from Modules.FlexEdit import FlexEdit
 from Modules.MyScheduler import MyScheduler
 import os
-from bs4 import BeautifulSoup as Soup
+from bs4 import BeautifulSoup as mBs
 import requests
 MyScheduler()
 # import random
@@ -82,11 +82,12 @@ def index():
 			url = "https://telebears.berkeley.edu/enrollment-osoc/osc"
 			code = "26187"
 			values = dict(_InField1 = "RESTRIC", _InField2 = code, _InField3 = "13D2")
-			html = requests.post(url, params=values, proxies=proxyDict)
-			soup = Soup(html.content, from_encoding="utf-8")
+			r = requests.get(url, params=values, proxies=proxyDict)
+			soup = mBS(r.text, 'html.parser')
+			
 
-			sp = soup.find_all("div", {"class" : "layout-div"})[2]
-			print(sp.text)
+			#sp = soup.find_all("div", {"class" : "layout-div"})[2]
+			print(soup)
 
 
 
