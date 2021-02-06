@@ -10,6 +10,7 @@ from Modules.FlexEdit import FlexEdit
 from Modules.MyScheduler import MyScheduler
 import os
 from bs4 import BeautifulSoup as Soup
+import requests
 MyScheduler()
 # import random
 app = Flask(__name__) #初始化
