@@ -79,10 +79,10 @@ def index():
 		    "https" : os.environ.get('FIXIE_URL', '')
 			}
 
-			url = "https://telebears.berkeley.edu/enrollment-osoc/osc"
-			code = "26187"
-			values = dict(_InField1 = "RESTRIC", _InField2 = code, _InField3 = "13D2")
-			r = requests.get(url, params=values, proxies=proxyDict)
+			url = "'https://www.ptt.cc/bbs/C_Chat/index.html"
+			#code = "26187"
+			#values = dict(_InField1 = "RESTRIC", _InField2 = code, _InField3 = "13D2")
+			r = requests.get(url,  proxies=proxyDict)
 			soup = mBS(r.text, 'html.parser')
 			
 
