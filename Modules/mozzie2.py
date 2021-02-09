@@ -39,7 +39,9 @@ def val_states(text):
 	#kami#3153
 	web = f'https://tracker.gg/valorant/profile/riot/{name[0]}%23{name[1]}/overview'
 	r = req.get(web)
+	print('2')
 	print(r.status_code)
+	print('3')
 	try:
 		soup = mBS(r.text, 'html.parser')
 		cards = (soup.select('.main'))

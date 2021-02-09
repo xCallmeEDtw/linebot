@@ -91,7 +91,7 @@ def index():
 			print(soup)
 		elif SplitText[0] == '#val' and len(SplitText) >= 3:
 			if SplitText[1] == 'stats':
-				myreply = val_states(SplitText[1])
+				myreply = val_states(SplitText[2])
 				print(myreply)
 			# 	messages.append(MessageAdd('Kills:' + myreply[2] + ' KD:'+ myreply[3], 'text'))
 			# 	messages.append(MessageAdd('Wins:' + myreply[0] + 'Win%:'+ myreply[1], 'text'))
