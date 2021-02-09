@@ -38,13 +38,9 @@ def val_states(text):
 	name = text.split("#")
 	#kami#3153
 	web = f'https://tracker.gg/valorant/profile/riot/{name[0]}%23{name[1]}/overview'
+	r = req.get(web)
+	print(r.status_code)
 	try:
-		r = req.get(web)
-
-		# titles= []
-		# images = []
-		# print(r.status_code)
-
 		soup = mBS(r.text, 'html.parser')
 		cards = (soup.select('.main'))
 		stats = cards[0].text.split()
