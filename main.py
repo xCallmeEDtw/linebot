@@ -93,10 +93,10 @@ def index():
 			if SplitText[1] == 'stats':
 				myreply = val_states(SplitText[2])
 				print(myreply)
-			# 	messages.append(MessageAdd('Kills:' + myreply[2] + ' KD:'+ myreply[3], 'text'))
-			# 	messages.append(MessageAdd('Wins:' + myreply[0] + 'Win%:'+ myreply[1], 'text'))
-			# 	messages.append(MessageAdd('HeadShot:' + myreply[4] + 'ACE!:'+ myreply[5], 'text'))
-			# ReplyMessage(replyToken,messages)
+				messages.append(MessageAdd('Kills:' + myreply[2] + ' KD:'+ myreply[3], 'text'))
+				messages.append(MessageAdd('Wins:' + myreply[0] + 'Win%:'+ myreply[1], 'text'))
+				messages.append(MessageAdd('HeadShot:' + myreply[4] + 'ACE!:'+ myreply[5], 'text'))
+			ReplyMessage(replyToken,messages)
 
 		return 'go buy ssd la mother fker'
 	elif request.method == 'GET':
