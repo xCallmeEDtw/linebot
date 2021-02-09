@@ -34,6 +34,30 @@ def r6_operater(player,operator):
 	print('你媽勝負比:',myreply[7])
 	
 	return(myreply)
+def val_states(text):
+	name = text.split("#")
+	#kami#3153
+	web = f'https://tracker.gg/valorant/profile/riot/{name[0]}%23{name[1]}/overview'
+	try:
+		r = req.get(web)
 
+		# titles= []
+		# images = []
+		# print(r.status_code)
+
+		soup = mBS(r.text, 'html.parser')
+		cards = (soup.select('.main'))
+		stats = cards[0].text.split()
+		cards = (soup.select('[data-v-5edf1b22], .value'))
+		stats2 = ""
+		for i in range(3,len(cards),9):
+			stats2 += (cards[i].text)
+		stats2 = stats2.split()
+		myreply = [stats[1],stats2[10],stats[3],stats2[4],stats[5],stats[18]]
+		return(myreply)
+	# for i in range(len(stats)):
+	#  	print()
+	except:
+		return("查無此人")	
 
 

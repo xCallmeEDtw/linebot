@@ -5,6 +5,7 @@ from Modules.OPTmessage import MessageAdd
 from Modules.games import mora
 from Modules.mozzie2 import r6_operater
 from Modules.mozzie2 import r6_states
+from Modules.mozzie2 import val_states
 #from Modules.BigData import RandomPicture
 from Modules.FlexEdit import FlexEdit
 from Modules.MyScheduler import MyScheduler
@@ -47,7 +48,7 @@ def index():
 			messages.append(MessageAdd(myreply, 'text'))
 			ReplyMessage(replyToken,messages)
 
-		elif SplitText[0] == 'r6' and len(SplitText) >= 3:
+		elif SplitText[0] == '#r6' and len(SplitText) >= 3:
 			if SplitText[1] == 'stats':
 				myreply = r6_states(SplitText[2])
 				messages.append(MessageAdd("Wins: " + myreply[0], 'text'))
@@ -88,9 +89,13 @@ def index():
 
 			#sp = soup.find_all("div", {"class" : "layout-div"})[2]
 			print(soup)
-
-
-
+		elif SplitText[0] == '#val' and len(SplitText) >= 3:
+			if SplitText[1] == 'stats':
+				myreply = val_states(SplitText[1])
+				messages.append(MessageAdd('Kills:' + myreply[2] + ' KD:'+ myreply[3], 'text'))
+				messages.append(MessageAdd('Wins:' + myreply[0] + 'Win%:'+ myreply[1], 'text'))
+				messages.append(MessageAdd('HeadShot:' + myreply[4] + 'ACE!:'+ myreply[5], 'text'))
+			ReplyMessage(replyToken,messages)
 
 		return 'go buy ssd la mother fker'
 	elif request.method == 'GET':
